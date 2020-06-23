@@ -1,0 +1,15 @@
+{% extends 'sections/base.html' %}
+{% block content %}
+<div class="container">
+<h2>Are you sure you want to delete this Video Section?</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+<br>
+<h2><a href="{% url 'details_section' section.id %}">{{ section.title }}</a></h2>
+
+</div>
+{% endblock %}
